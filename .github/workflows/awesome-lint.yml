@@ -12,6 +12,7 @@ on:
     paths:
       - "README.md"
       - ".remarkrc.yml"
+      - ".github/workflows/awesome-lint.yml"
 
 permissions:
   contents: read
@@ -37,3 +38,5 @@ jobs:
 
       - name: Run awesome-lint
         run: awesome-lint
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
