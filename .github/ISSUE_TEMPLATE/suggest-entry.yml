@@ -1,0 +1,110 @@
+name: Suggest an entry
+description: Propose a public GitHub repo to be added to the directory.
+title: "[Suggest] <repo-owner>/<repo-name>"
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an entry. Before submitting, please read [CRITERIA.md](../blob/main/CRITERIA.md) to check whether the repo qualifies.
+
+        If you're able to open a Pull Request directly, please do that instead — it's faster for us to review. This template is for cases where opening a PR isn't convenient.
+
+  - type: input
+    id: repo-url
+    attributes:
+      label: Repo URL
+      description: The full GitHub URL of the repo being suggested.
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-it-ships
+    attributes:
+      label: What does this repo ship?
+      description: One line. What kind of installable context does it ship — skills, rules, MCP server, methodology, behaviour-modification, prompt library, etc.?
+      placeholder: A collection of N skills for X, installable via Y.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: primary-shape-category
+    attributes:
+      label: Primary shape category
+      description: Which top-level category does this best fit? See CATEGORIES.md for definitions.
+      options:
+        - Skill collections
+        - Slash commands & subagents
+        - Rules collections
+        - Hooks
+        - MCP servers
+        - Methodology / spec-driven frameworks
+        - Memory / context substrates
+        - Behaviour-modification skills
+        - Prompt / system-prompt libraries
+        - Orchestration frameworks
+        - Other / aggregator hubs / format anchors
+        - Unsure
+    validations:
+      required: true
+
+  - type: input
+    id: tool-tags
+    attributes:
+      label: Tool / ecosystem tag(s)
+      description: Which agent ecosystems does it target? Use comma-separated tags. Examples — claude-code, cursor, codex, multi-tool, mcp, generic.
+      placeholder: claude-code, cursor
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-mechanism
+    attributes:
+      label: Install mechanism
+      description: How does the content reach the consumer's AI workflow?
+      options:
+        - copy
+        - script
+        - npm
+        - pip
+        - cargo
+        - marketplace
+        - plugin
+        - extension
+        - submodule
+        - other
+    validations:
+      required: true
+
+  - type: input
+    id: licence
+    attributes:
+      label: Licence
+      description: SPDX identifier or "none" if missing.
+      placeholder: MIT
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: criteria-self-check
+    attributes:
+      label: Criteria self-check
+      description: Please confirm each item.
+      options:
+        - label: I've read [CRITERIA.md](../blob/main/CRITERIA.md).
+          required: true
+        - label: The repo's primary deliverable is installable context for AI agents (not a product that uses AI internally).
+          required: true
+        - label: There's a clear install / consume path.
+          required: true
+        - label: The content is structured for agent consumption (not free-form human-only docs).
+          required: true
+        - label: The repo is public and has a licence (or I've flagged "no licence" above).
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: Optional. Anything else useful for the reviewer.

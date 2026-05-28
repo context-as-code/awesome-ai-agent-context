@@ -1,0 +1,63 @@
+# Configuration for remark-lint / awesome-lint.
+# Personal dictionary entries below allow awesome-lint's spell-check rule to
+# accept domain jargon that isn't in the default dictionary.
+# Add new terms as they appear in entries; commit alongside the entry PR.
+
+plugins:
+  - preset-lint-awesome
+  - - retext-spell
+    - personal:
+        - AGENTS
+        - ADR
+        - ADRs
+        - Aider
+        - Anthropic
+        - agentic
+        - Antigravity
+        - Bedrock
+        - bool
+        - CC0
+        - CJS
+        - CLI
+        - CLIs
+        - Cline
+        - Codex
+        - Copilot
+        - Cursor
+        - DevContainer
+        - DSL
+        - ESM
+        - Gemini
+        - GitHub
+        - GPT
+        - Hermes
+        - IDE
+        - IDEs
+        - Karpathy
+        - Kiro
+        - LLM
+        - LLMs
+        - MCP
+        - markdown
+        - npm
+        - npx
+        - OpenAI
+        - OpenClaw
+        - PR
+        - PRs
+        - PowerShell
+        - Pulumi
+        - README
+        - README.md
+        - readme
+        - Roo
+        - SDK
+        - sindresorhus
+        - subagent
+        - subagents
+        - TDD
+        - TypeScript
+        - vendored
+        - vendors
+        - Windsurf
+        - YAML

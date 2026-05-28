@@ -1,0 +1,39 @@
+name: awesome-lint
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "README.md"
+      - ".remarkrc.yml"
+      - ".github/workflows/awesome-lint.yml"
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - ".remarkrc.yml"
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  awesome-lint:
+    name: Run awesome-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install awesome-lint
+        run: npm install --global awesome-lint
+
+      - name: Run awesome-lint
+        run: awesome-lint

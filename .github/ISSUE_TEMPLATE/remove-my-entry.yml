@@ -1,0 +1,47 @@
+name: Request removal of my entry
+description: If you maintain a repo listed here and want it removed or substantively updated, use this template.
+title: "[Removal request] <repo-owner>/<repo-name>"
+labels: ["removal-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for maintainers of repos listed in the directory. Removal requests are honoured. Substantive update requests are also welcomed via this template.
+
+        If you're not the maintainer but believe an entry should be removed for other reasons (e.g. it no longer fits the validity criteria), please use the `report-stale` template or open a regular issue.
+
+  - type: input
+    id: entry-name
+    attributes:
+      label: Entry name
+      description: The name as it appears in the directory.
+      placeholder: owner/repo
+    validations:
+      required: true
+
+  - type: input
+    id: maintainer-confirmation
+    attributes:
+      label: How can we verify you maintain this repo?
+      description: A brief note. Common verification — confirm from the same GitHub account that maintains the repo, or link a public statement, or comment from the repo itself.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request type
+      options:
+        - Remove the entry entirely
+        - Update the description / tags
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For "update" requests, please describe the change. For "remove" requests, no further detail required but feel free to share reasoning.
+    validations:
+      required: false
